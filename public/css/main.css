@@ -106,16 +106,15 @@ header {
   padding: 1em;
 }
 header .logo {
-  width: 100px;
-  height: 100%;
-  object-fit: contain;
+  margin-inline-start: 1em;
 }
 header .logo img {
-  width: 100%;
+  width: 100px;
   transform: scale(1.75);
 }
 header .navbar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 1em;
 }
@@ -151,15 +150,14 @@ header .navbar a {
 header .navbar a:hover {
   color: var(--hover-font-1);
 }
-
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
+header .buttons {
+  display: flex;
+  gap: 1em;
 }
+header .buttons .button {
+  width: max-content;
+}
+
 main .hero {
   height: calc(100vh - 92px);
   display: grid;
@@ -257,6 +255,24 @@ main .signupModal form .btn {
 main .signupModal form .btn:hover {
   color: var(--font-3);
   background: var(--hover-cta);
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  header .navbar .navlist {
+    display: none;
+  }
+  main .hero {
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -26,18 +26,17 @@ header {
   padding: 1em;
 
   .logo {
-    width: 100px;
-    height: 100%;
-    object-fit: contain;
+    margin-inline-start: 1em;
 
     img {
-      width: 100%;
+      width: 100px;
       transform: scale(1.75);
     }
   }
 
   .navbar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 1em;
 
@@ -82,18 +81,14 @@ header {
       }
     }
   }
-}
 
-// Cursor Blinking Animation
+  .buttons {
+    display: flex;
+    gap: 1em;
 
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
+    .button {
+      width: max-content;
+    }
   }
 }
 
@@ -225,6 +220,36 @@ main {
           background: var(--hover-cta);
         }
       }
+    }
+  }
+}
+
+// Cursor Blinking Animation
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    .navbar {
+      .navlist {
+        display: none;
+      }
+    }
+  }
+
+  main {
+    .hero {
+      grid-template-columns: auto;
+      grid-template-rows: 1fr 1fr;
     }
   }
 }
