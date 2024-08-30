@@ -25,6 +25,17 @@ header {
 
   padding: 1em;
 
+  .logo {
+    width: 100px;
+    height: 100%;
+    object-fit: contain;
+
+    img {
+      width: 100%;
+      transform: scale(1.75);
+    }
+  }
+
   .navbar {
     display: flex;
     align-items: center;
@@ -56,7 +67,7 @@ header {
     #loginButton {
       padding: 0.8em 2em;
       border-color: var(--cta);
-      font-weight: 500;
+      font-weight: 500 !important;
     }
 
     a {
@@ -73,54 +84,116 @@ header {
   }
 }
 
+// Cursor Blinking Animation
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
 main {
   .hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 1em;
+  }
 
-    padding: 2em;
+  h1 {
+    font-size: 2rem;
+  }
 
-    .right {
-      background: red;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  h2 {
+    font-size: 1.5rem;
+  }
 
-      img {
-        width: 100%;
-        opacity: 0.5;
-      }
-    }
+  .animated-text {
+    color: var(--cta);
+    position: relative;
+  }
 
-    .buttons {
-      display: flex;
-      gap: 1em;
-      flex-direction: column;
-      width: fit-content;
+  .animated-text::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: var(--font-3);
+    animation: blink 1000ms cubic-bezier(0, 1, 0, 1) infinite forwards;
+  }
+
+  .loginWindow {
+    display: none;
+    place-items: center;
+
+    background: var(--hover-bg-1);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    inset: 0;
+  }
+
+  .modal {
+    position: relative;
+    background: var(--bg-1);
+    border-radius: 10px;
+    box-shadow: 2px 6px 15px black;
+    padding: 3em 2em;
+
+    h2 {
+      color: var(--cta);
     }
 
     .button {
-      color: var(--font-2);
-
-      transition: all 200ms ease;
-
-      &#googleSignin {
-        outline: 2px solid transparent;
-        &:hover {
-          border-color: var(--font-1);
-          outline-color: var(--font-1);
-        }
-      }
-
       &:hover {
-        color: var(--font-1);
+        color: var(--cta);
+      }
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .cross-button {
+      position: absolute;
+      top: 1.5em;
+      right: 1.5em;
+    }
+  }
+
+  .loginModal {
+    display: none;
+    align-content: center;
+    gap: 1.5em;
+
+    form {
+      .btn {
+        color: var(--cta);
+        border-color: var(--cta);
+
+        &:hover {
+          background: var(--hover-bg-1);
+        }
       }
     }
   }
 
-  .customers {
-    background: var(--bg-1);
+  .signupModal {
+    display: none;
+    align-content: center;
+    gap: 1.5em;
+
+    form {
+      .btn {
+        color: var(--font-3);
+        border-color: var(--cta);
+        background: var(--cta);
+
+        &:hover {
+          color: var(--font-3);
+          background: var(--hover-cta);
+        }
+      }
+    }
   }
 }

@@ -20,6 +20,8 @@
     />
 
     <title>JobZen</title>
+
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header class="wrapper-1">
@@ -28,44 +30,96 @@
       </a>
       <nav class="navbar">
         <ul class="navlist">
-          <li><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">People</a></li>
+          <li><a href="#">Jobs</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
         </ul>
-        <a href="login.html" class="button" id="loginButton">Log in</a>
-        <a href="signup.html" class="button" id="signupButton">Sign up</a>
+        <button class="button btn loginButton" id="loginButton">Log in</button>
+        <button class="button btn signupButton" id="signupButton">
+          Sign up
+        </button>
       </nav>
     </header>
 
     <main>
       <section class="hero wrapper">
-        <div class="left">
-          <h2>Lorem ipsum dolor sit amet consectetur.</h2>
+        <h1>Hi, I am Aanshik Shama</h1>
+        <h2><span class="animated-text"></span></h2>
+      </section>
+
+      <!-- Login Form -->
+      <!-- The loginWindow contains the login and signup modals -->
+      <div class="loginWindow" id="loginWindow">
+        <!-- Login Modal -->
+        <div class="loginModal modal" id="loginModal">
+          <button type="button" class="button cross-button">
+            <i class="bi bi-x-lg"></i>
+          </button>
+          <h2>Login</h2>
+          <form action="#">
+            <input
+              type="email"
+              name="email"
+              id="loginEmail"
+              placeholder="Email"
+            />
+            <input
+              type="password"
+              name="password"
+              id="loginPassword"
+              placeholder="Password"
+            />
+
+            <button type="submit" class="button btn">Login</button>
+          </form>
+
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis
-            impedit velit natus laboriosam, dolore sed.
+            New to JobZen?
+            <button type="button" class="button signupButton">
+              Signup now
+            </button>
           </p>
-          <div class="buttons">
-            <a href="#" class="button" id="googleSignin">
-              <i class="bi bi-google"></i>
-              Continue with Google
-            </a>
-            <a href="#" class="button">Signin with Mail</a>
-          </div>
-
-          <p>New to JobZen? <a href="signup.html">Join now</a></p>
         </div>
 
-        <div class="right">
-          <img src="img/hero-img.jpg" alt="" />
+        <!-- Signup Modal -->
+        <div class="signupModal modal" id="signupModal">
+          <button type="button" class="button cross-button">
+            <i class="bi bi-x-lg"></i>
+          </button>
+          <h2>Signup</h2>
+          <form action="#">
+            <input type="text" name="name" id="signupName" placeholder="Name" />
+            <input
+              type="email"
+              name="email"
+              id="signupEmail"
+              placeholder="Email"
+            />
+            <input
+              type="password"
+              name="password"
+              id="signupPassword"
+              placeholder="Password"
+            />
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              placeholder="Confirm Password"
+            />
+
+            <button type="submit" class="button btn">Resister</button>
+          </form>
+
+          <p>
+            Already have an account?
+            <button type="button" class="button loginButton">Login</button>
+          </p>
         </div>
-      </section>
-      <section class="customers">
-        <h2>Who is JobZen for?</h2>
-        <p>Anyone trying to navigate their life.</p>
-      </section>
+        <!-- Login and signup window ends here -->
+      </div>
     </main>
   </body>
 </html>

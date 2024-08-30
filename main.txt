@@ -49,9 +49,7 @@ By implementing this comprehensive solution, the platform will significantly enh
 
 Navigation bar
 
-Hero Section
-
-Features Sections : 
+Hero Section that includes most of the features.
 
     Government + Private Jobs
 
@@ -63,8 +61,6 @@ Features Sections :
 
     Internships and Courses
 
-Who is this app for? (Customer )
-
-Final CTA
+Who is this app for? (Customers)
 
 Footer

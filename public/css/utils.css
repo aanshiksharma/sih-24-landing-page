@@ -1,8 +1,19 @@
 .button {
+  text-decoration: none;
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: Roboto, sans-serif;
+  background: none;
+  transition: 200ms ease;
+}
+
+.btn {
   border-radius: 2.5em;
   padding: 0.8em 2em;
   border: 1px solid var(--border);
-  text-decoration: none;
 }
 
 a {
@@ -11,6 +22,25 @@ a {
 
 p {
   color: var(--font-1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  font-size: 1rem;
+  font-family: Roboto, sans-serif;
+  width: 30ch;
+}
+form input {
+  padding: 1em 0.5em;
+  border: 1px solid var(--border);
+  outline: 0;
+  background: transparent;
+  border-radius: 3px;
+}
+form input:focus {
+  border-color: var(--cta);
 }
 
 /*# sourceMappingURL=utils.css.map */

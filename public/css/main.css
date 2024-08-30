@@ -1,20 +1,31 @@
 :root {
-  --hover-cta: rgb(0, 56, 177);
+  --hover-cta: #0038b1;
   --hover-font-1: #000000;
   --hover-bg-1: #00000017;
   --font-1: #2e2e2e;
   --font-2: #616161;
   --font-3: #ece3e3;
-  --bg-1: rgb(235, 235, 191);
+  --bg-1: #f2f5fa;
   --border: #575757;
-  --cta: rgb(30, 76, 177);
+  --cta: #1e4cb1;
 }
 
 .button {
+  text-decoration: none;
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: Roboto, sans-serif;
+  background: none;
+  transition: 200ms ease;
+}
+
+.btn {
   border-radius: 2.5em;
   padding: 0.8em 2em;
   border: 1px solid var(--border);
-  text-decoration: none;
 }
 
 a {
@@ -23,6 +34,25 @@ a {
 
 p {
   color: var(--font-1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  font-size: 1rem;
+  font-family: Roboto, sans-serif;
+  width: 30ch;
+}
+form input {
+  padding: 1em 0.5em;
+  border: 1px solid var(--border);
+  outline: 0;
+  background: transparent;
+  border-radius: 3px;
+}
+form input:focus {
+  border-color: var(--cta);
 }
 
 .wrapper {
@@ -75,6 +105,15 @@ header {
   align-items: center;
   padding: 1em;
 }
+header .logo {
+  width: 100px;
+  height: 100%;
+  object-fit: contain;
+}
+header .logo img {
+  width: 100%;
+  transform: scale(1.75);
+}
 header .navbar {
   display: flex;
   align-items: center;
@@ -101,7 +140,7 @@ header .navbar #signupButton,
 header .navbar #loginButton {
   padding: 0.8em 2em;
   border-color: var(--cta);
-  font-weight: 500;
+  font-weight: 500 !important;
 }
 header .navbar a {
   color: var(--font-2);
@@ -113,45 +152,86 @@ header .navbar a:hover {
   color: var(--hover-font-1);
 }
 
-main .hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 1em;
-  padding: 2em;
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
-main .hero .right {
-  background: red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+main h1 {
+  font-size: 2rem;
 }
-main .hero .right img {
-  width: 100%;
-  opacity: 0.5;
+main h2 {
+  font-size: 1.5rem;
 }
-main .hero .buttons {
-  display: flex;
-  gap: 1em;
-  flex-direction: column;
-  width: fit-content;
+main .animated-text {
+  color: var(--cta);
+  position: relative;
 }
-main .hero .button {
-  color: var(--font-2);
-  transition: all 200ms ease;
+main .animated-text::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: var(--font-3);
+  animation: blink 1000ms cubic-bezier(0, 1, 0, 1) infinite forwards;
 }
-main .hero .button#googleSignin {
-  outline: 2px solid transparent;
+main .loginWindow {
+  display: none;
+  place-items: center;
+  background: var(--hover-bg-1);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  inset: 0;
 }
-main .hero .button#googleSignin:hover {
-  border-color: var(--font-1);
-  outline-color: var(--font-1);
-}
-main .hero .button:hover {
-  color: var(--font-1);
-}
-main .customers {
+main .modal {
+  position: relative;
   background: var(--bg-1);
+  border-radius: 10px;
+  box-shadow: 2px 6px 15px black;
+  padding: 3em 2em;
+}
+main .modal h2 {
+  color: var(--cta);
+}
+main .modal .button:hover {
+  color: var(--cta);
+}
+main .modal p {
+  text-align: center;
+}
+main .modal .cross-button {
+  position: absolute;
+  top: 1.5em;
+  right: 1.5em;
+}
+main .loginModal {
+  display: none;
+  align-content: center;
+  gap: 1.5em;
+}
+main .loginModal form .btn {
+  color: var(--cta);
+  border-color: var(--cta);
+}
+main .loginModal form .btn:hover {
+  background: var(--hover-bg-1);
+}
+main .signupModal {
+  display: none;
+  align-content: center;
+  gap: 1.5em;
+}
+main .signupModal form .btn {
+  color: var(--font-3);
+  border-color: var(--cta);
+  background: var(--cta);
+}
+main .signupModal form .btn:hover {
+  color: var(--font-3);
+  background: var(--hover-cta);
 }
 
 /*# sourceMappingURL=main.css.map */
