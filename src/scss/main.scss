@@ -1,0 +1,126 @@
+@import "colors";
+@import "utils";
+@import "wrappers";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+
+  ul {
+    list-style-type: none;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1em;
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    .navlist {
+      display: flex;
+      padding: 1em;
+    }
+
+    #loginButton {
+      color: var(--cta);
+
+      &:hover {
+        background: var(--hover-bg-1);
+      }
+    }
+
+    #signupButton {
+      background: var(--cta);
+      color: var(--font-3) !important;
+
+      &:hover {
+        background: var(--hover-cta);
+      }
+    }
+
+    #signupButton,
+    #loginButton {
+      padding: 0.8em 2em;
+      border-color: var(--cta);
+      font-weight: 500;
+    }
+
+    a {
+      color: var(--font-2);
+      font-size: 1rem;
+      padding: 1em;
+
+      transition: all 200ms ease;
+
+      &:hover {
+        color: var(--hover-font-1);
+      }
+    }
+  }
+}
+
+main {
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 1em;
+
+    padding: 2em;
+
+    .right {
+      background: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 100%;
+        opacity: 0.5;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      gap: 1em;
+      flex-direction: column;
+      width: fit-content;
+    }
+
+    .button {
+      color: var(--font-2);
+
+      transition: all 200ms ease;
+
+      &#googleSignin {
+        outline: 2px solid transparent;
+        &:hover {
+          border-color: var(--font-1);
+          outline-color: var(--font-1);
+        }
+      }
+
+      &:hover {
+        color: var(--font-1);
+      }
+    }
+  }
+
+  .customers {
+    background: var(--bg-1);
+  }
+}
