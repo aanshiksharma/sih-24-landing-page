@@ -1,0 +1,16 @@
+.button {
+  border-radius: 2.5em;
+  padding: 0.8em 2em;
+  border: 1px solid var(--border);
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  color: var(--font-1);
+}
+
+/*# sourceMappingURL=utils.css.map */

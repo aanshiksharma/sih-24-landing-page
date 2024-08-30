@@ -1,0 +1,157 @@
+:root {
+  --hover-cta: rgb(0, 56, 177);
+  --hover-font-1: #000000;
+  --hover-bg-1: #00000017;
+  --font-1: #2e2e2e;
+  --font-2: #616161;
+  --font-3: #ece3e3;
+  --bg-1: rgb(235, 235, 191);
+  --border: #575757;
+  --cta: rgb(30, 76, 177);
+}
+
+.button {
+  border-radius: 2.5em;
+  padding: 0.8em 2em;
+  border: 1px solid var(--border);
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  color: var(--font-1);
+}
+
+.wrapper {
+  max-width: 1920px;
+  margin-inline: auto;
+}
+
+.wrapper-1 {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.wrapper-2 {
+  max-width: 960px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.wrapper-text-1 {
+  max-width: 84ch;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.wrapper-text-2 {
+  max-width: 60ch;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+body ul {
+  list-style-type: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+header .navbar {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+header .navbar .navlist {
+  display: flex;
+  padding: 1em;
+}
+header .navbar #loginButton {
+  color: var(--cta);
+}
+header .navbar #loginButton:hover {
+  background: var(--hover-bg-1);
+}
+header .navbar #signupButton {
+  background: var(--cta);
+  color: var(--font-3) !important;
+}
+header .navbar #signupButton:hover {
+  background: var(--hover-cta);
+}
+header .navbar #signupButton,
+header .navbar #loginButton {
+  padding: 0.8em 2em;
+  border-color: var(--cta);
+  font-weight: 500;
+}
+header .navbar a {
+  color: var(--font-2);
+  font-size: 1rem;
+  padding: 1em;
+  transition: all 200ms ease;
+}
+header .navbar a:hover {
+  color: var(--hover-font-1);
+}
+
+main .hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 1em;
+  padding: 2em;
+}
+main .hero .right {
+  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .hero .right img {
+  width: 100%;
+  opacity: 0.5;
+}
+main .hero .buttons {
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+  width: fit-content;
+}
+main .hero .button {
+  color: var(--font-2);
+  transition: all 200ms ease;
+}
+main .hero .button#googleSignin {
+  outline: 2px solid transparent;
+}
+main .hero .button#googleSignin:hover {
+  border-color: var(--font-1);
+  outline-color: var(--font-1);
+}
+main .hero .button:hover {
+  color: var(--font-1);
+}
+main .customers {
+  background: var(--bg-1);
+}
+
+/*# sourceMappingURL=main.css.map */
