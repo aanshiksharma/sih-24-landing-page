@@ -35,8 +35,10 @@ const animatedTextBox = document.querySelector(".animated-text");
 
 let textArr = [
   "Government and Private Jobs.",
-  "Mentorship Programs with Industry Professionals.",
+  "Mentorship Programs.",
   "Internships, Courses and Career Guidance.",
+  "Resume Building Resources.",
+  "AI-based matchmaking with Professionals.",
 ];
 
 let displayArr = [];
